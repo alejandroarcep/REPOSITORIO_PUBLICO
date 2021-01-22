@@ -1,0 +1,16 @@
+
+service: planeta
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+
+functions:
+  mostrarPlaneta:
+    handler: handler.mostrarPlaneta
+    events:
+      - http:
+          path: /spplanetaapi/{planeta}
+          method: get
+    
